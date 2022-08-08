@@ -9,20 +9,19 @@ const Country = (country) => {
   this.population = country.population;
 };
 
-Country.findById = (id, result) => {
-  // ID SHOULD BE INTEGER - NEEDS VALIDATION
-  sql.query(`SELECT * FROM countries WHERE id = ${id}`, (error, response) => {
-    if (error) {
-      console.log("Error: ", error);
-      result(error, null);
-      return;
+Country.findUsingConditions = (reqBody, result) => {
+  const { limit, offset, sortBy, orderBy } = reqBody;
+  sql.query(
+    `(SELECT * FROM countries LIMIT ${limit} OFFSET ${offset}) ORDER BY ${sortBy} ${orderBy};`,
+    (error, response) => {
+      if (error) {
+        console.log("Error: ", error);
+        result(error, null);
+        return;
+      }
+      result(null, response);
     }
-    if (response.length) {
-      result(null, response[0]);
-      return;
-    }
-    result({ kind: "not_found" }, null);
-  });
+  );
 };
 
 module.exports = Country;

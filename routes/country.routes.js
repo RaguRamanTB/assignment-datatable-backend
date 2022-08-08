@@ -4,8 +4,8 @@ module.exports = (app) => {
   // Initializing the Express router
   const router = require("express").Router();
 
-  // Retrieve country by ID
-  router.get("/:id", countries.findOne);
+  // Retrieve countries using conditions
+  router.get("/", countries.findAll);
 
   app.use("/api/countries", router);
 };
