@@ -1,0 +1,22 @@
+{
+  "name": "assignment-datatable-backend",
+  "version": "1.0.0",
+  "description": "REST APIs for DataTable Assignment",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/RaguRamanTB/assignment-datatable-backend.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/RaguRamanTB/assignment-datatable-backend/issues"
+  },
+  "homepage": "https://github.com/RaguRamanTB/assignment-datatable-backend#readme",
+  "dependencies": {
+    "express": "^4.18.1"
+  }
+}
