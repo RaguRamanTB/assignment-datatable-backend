@@ -10,13 +10,16 @@
     "type": "git",
     "url": "git+https://github.com/RaguRamanTB/assignment-datatable-backend.git"
   },
-  "author": "",
+  "author": "RaguRamanTB",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/RaguRamanTB/assignment-datatable-backend/issues"
   },
   "homepage": "https://github.com/RaguRamanTB/assignment-datatable-backend#readme",
   "dependencies": {
-    "express": "^4.18.1"
+    "cors": "^2.8.5",
+    "dotenv": "^16.0.1",
+    "express": "^4.18.1",
+    "mysql": "^2.18.1"
   }
 }
