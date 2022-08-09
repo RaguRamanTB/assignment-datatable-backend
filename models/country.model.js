@@ -9,8 +9,7 @@ const Country = (country) => {
   this.population = country.population;
 };
 
-Country.findUsingConditions = (reqBody, result) => {
-  const { limit, offset, sortBy, orderBy } = reqBody;
+Country.findUsingConditions = (limit, offset, sortBy, orderBy, result) => {
   sql.query(
     `(SELECT * FROM countries LIMIT ${limit} OFFSET ${offset}) ORDER BY ${sortBy} ${orderBy};`,
     (error, response) => {

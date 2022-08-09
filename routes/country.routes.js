@@ -5,7 +5,7 @@ module.exports = (app) => {
   const router = require("express").Router();
 
   // Retrieve countries using conditions
-  router.get("/", countries.findAll);
+  router.get("/:limit-:offset/:sortBy-:orderBy", countries.findAll);
 
   app.use("/api/countries", router);
 };
