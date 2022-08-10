@@ -23,4 +23,15 @@ Country.findUsingConditions = (limit, offset, sortBy, orderBy, result) => {
   );
 };
 
+Country.findCount = (result) => {
+  sql.query(`SELECT COUNT(*) AS count FROM countries;`, (error, res) => {
+    if (error) {
+      console.log("Error: ", error);
+      result(error, null);
+      return;
+    }
+    result(null, res);
+  });
+};
+
 module.exports = Country;

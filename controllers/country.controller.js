@@ -17,3 +17,15 @@ exports.findAll = (req, res) => {
     }
   );
 };
+
+exports.findCount = (_req, res) => {
+  Country.findCount((err, data) => {
+    if (err) {
+      res.status(500).send({
+        message: err.message || `Error retrieving total number of countries.`,
+      });
+    } else {
+      res.send(data);
+    }
+  });
+};
